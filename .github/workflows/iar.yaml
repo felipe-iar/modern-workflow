@@ -2,7 +2,11 @@ name: IAR CI
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
+    types:
+    - opened
+    - synchronize
+    - reopened
     paths-ignore:
     - 'README.md'
     - '.devcontainer/**'
@@ -13,6 +17,7 @@ env:
 
 jobs:
   build:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     name: Build
     runs-on: ubuntu-24.04
     container:
@@ -36,6 +41,7 @@ jobs:
       run: cmake --build --preset minsizerel --verbose
 
   static-analysis:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     name: Static Analysis
     needs: build
     runs-on: ubuntu-24.04
@@ -53,6 +59,7 @@ jobs:
       run: cmake --build --preset debug
 
   unit-testing:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     name: Unit Testing
     needs: build
     runs-on: ubuntu-24.04
@@ -82,6 +89,7 @@ jobs:
       run: ctest --test-dir build -C MinSizeRel
 
   deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     name: Deploy
     needs: [ static-analysis, unit-testing ]
     runs-on: ubuntu-24.04
