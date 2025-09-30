@@ -26,16 +26,19 @@
   // The License Management System is updated
   //  for the Dev Container at build-time.
   "features": {
-    "./lmsc": {}
+    "./lmsc": {},
+    "./usb": {}
+
   },
   // uncomment to use `ubuntu` as user instead of `root.`
   // More information: https://containers.dev/implementors/json_reference/#remoteUser
-  // "remoteUser": "ubuntu",
+  "remoteUser": "ubuntu",
   // Exposes the host's USB bus to the dev container.
   "runArgs": [
     "--device=/dev/bus/usb"
   ],
   // Initialize git submodules
-  "postCreateCommand": "git submodule update --init --recursive",
-  "postStartCommand": "git submodule update --init --recursive"
+  "postAttachCommand": "git submodule update --init --recursive",
+  // Port forwarding
+  "forwardPorts": []
 }
