@@ -1,15 +1,18 @@
 {
   // arm:9.70.1-st
   // IAR Build Tools for Arm w/ ST device support
+  
   // Update the image for use with other variants
   // More information: https://github.com/iarsystems/containers/wiki/Arm-image-variants
   "image": "ghcr.io/iarsystems/arm:9.70.1-st",
+  
   // Set the Container's environment variables
   "containerEnv": {
     "HOME": "/home/ubuntu",
     "IAR_LMS_BEARER_TOKEN": "${localEnv:IAR_LMS_BEARER_TOKEN}"
   },
-  // Customiszations installs the IAR Extensions for VS Code
+  
+  // Customizations installs the IAR Extensions for VS Code
   // More information: https://iar.com/vscode
   "customizations": {
     "vscode": {
@@ -23,22 +26,25 @@
       ]
     }
   },
-  // The License Management System is updated
-  //  for the Dev Container at build-time.
+  
+  // The container's features installed at build-time
   "features": {
     "./lmsc": {},
     "./usb": {}
-
   },
-  // uncomment to use `ubuntu` as user instead of `root.`
+
+  // Comment out "remoteUser" to connect as `root` instead
   // More information: https://containers.dev/implementors/json_reference/#remoteUser
   "remoteUser": "ubuntu",
-  // Exposes the host's USB bus to the dev container.
-  "runArgs": [
-    "--device=/dev/bus/usb"
-  ],
+
+  // Uncomment for exposing the host's USB bus to the dev container
+  // "runArgs": [
+  //   "--device=/dev/bus/usb"
+  // ],
+  
   // Initialize git submodules
   "postAttachCommand": "git submodule update --init --recursive",
+  
   // Port forwarding
   "forwardPorts": []
 }
