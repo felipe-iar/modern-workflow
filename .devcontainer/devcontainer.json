@@ -1,8 +1,7 @@
 {
   // arm:9.70.1-st
   // IAR Build Tools for Arm w/ ST device support
-  
-  // Update the image for use with other variants
+    // Update the image for use with other variants
   // More information: https://github.com/iarsystems/containers/wiki/Arm-image-variants
   "image": "ghcr.io/iarsystems/arm:9.70.1-st",
   
@@ -29,6 +28,7 @@
   
   // The container's features installed at build-time
   "features": {
+    "./jlink": {},
     "./lmsc": {},
     "./usb": {}
   },
