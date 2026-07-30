@@ -9,7 +9,7 @@
             "target": "arm",
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
-            "workbenchPath": "/opt/iar/cxarm",
+            "workbenchPath": "/opt/iarsystems/bxarm",
             "projectPath": "${workspaceRoot}",
             "driver": "Simulator",
             "driverOptions": [
@@ -17,7 +17,7 @@
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "/opt/iar/cxarm/arm/config/debugger/ST/STM32F429II.ddf",
+                "/opt/iarsystems/bxarm/arm/config/debugger/ST/STM32F429II.ddf",
                 "--semihosting",
                 "--device=STM32F429II",
             ]
@@ -30,14 +30,14 @@
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
             "projectPath": "${workspaceRoot}",
-            "workbenchPath": "/opt/iar/cxarm",
+            "workbenchPath": "/opt/iarsystems/bxarm",
             "driver": "I-jet",
             "driverOptions": [
                 "--endian=little",
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "/opt/iar/cxarm/arm/config/debugger/ST/STM32F429II.ddf",
+                "/opt/iarsystems/bxarm/arm/config/debugger/ST/STM32F429II.ddf",
                 "--device=STM32F429II",
                 "--semihosting",
                 "--jet_power_from_probe=leave_on",
@@ -47,9 +47,9 @@
                 "--drv_catch_exceptions=0xff0"
             ],
             "download": {
-                "flashLoader": "/opt/iar/cxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+                "flashLoader": "/opt/iarsystems/bxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
                 "deviceMacros": [
-                    "/opt/iar/cxarm/arm/config/debugger/ST/STM32F4xx.dmac"
+                    "/opt/iarsystems/bxarm/arm/config/debugger/ST/STM32F4xx.dmac"
                 ]
             }
         },
@@ -62,13 +62,13 @@
         //     "stopOnSymbol": "main",
         //     "projectPath": "${workspaceRoot}",
         //     "driver": "I-jet",
-        //     "workbenchPath": "/opt/iar/cxarm",
+        //     "workbenchPath": "/opt/iarsystems/bxarm",
         //     "driverOptions": [
         //         "--endian=little",
         //         "--cpu=Cortex-M4",
         //         "--fpu=VFPv4_SP",
         //         "-p",
-        //         "/opt/iar/cxarm/arm/config/debugger/ST/STM32F429II.ddf",
+        //         "/opt/iarsystems/bxarm/arm/config/debugger/ST/STM32F429II.ddf",
         //         "--device=STM32F429II",
         //         "--semihosting",
         //         "--jet_power_from_probe=leave_on",
@@ -78,9 +78,9 @@
         //         "--drv_trace_settings=ETM"
         //     ],
         //     "download": {
-        //         "flashLoader": "/opt/iar/cxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+        //         "flashLoader": "/opt/iarsystems/bxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
         //         "deviceMacros": [
-        //             "$/opt/iar/cxarm/arm/config/debugger/ST/STM32F4xx.dmac"
+        //             "$/opt/iarsystems/bxarm/arm/config/debugger/ST/STM32F4xx.dmac"
         //         ]
         //     }
         // },
@@ -92,14 +92,14 @@
             "program": "${command:cmake.launchTargetPath}",
             "stopOnSymbol": "main",
             "projectPath": "${workspaceRoot}",
-            "workbenchPath": "/opt/iar/cxarm",
+            "workbenchPath": "/opt/iarsystems/bxarm",
             "driver": "J-Link/J-Trace",
             "driverOptions": [
                 "--endian=little",
                 "--cpu=Cortex-M4",
                 "--fpu=VFPv4_SP",
                 "-p",
-                "/opt/iar/cxarm/arm/config/debugger/ST/STM32F429II.ddf",
+                "/opt/iarsystems/bxarm/arm/config/debugger/ST/STM32F429II.ddf",
                 "--device=STM32F429II",
                 "--semihosting",
                 "--drv_communication=USB0",
@@ -111,9 +111,9 @@
                 "--drv_swo_clock_setup=168000000,0,2000000"
             ],
             //"download": {
-            //    "flashLoader": "/opt/iar/cxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
+            //    "flashLoader": "/opt/iarsystems/bxarm/arm/config/flashloader/ST/FlashSTM32F427xI.board",
             //    "deviceMacros": [
-            //        "/opt/iar/cxarm/arm/config/debugger/ST/STM32F4xx.dmac"
+            //        "/opt/iarsystems/bxarm/arm/config/debugger/ST/STM32F4xx.dmac"
             //    ]
             //}
         }

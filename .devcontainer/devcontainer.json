@@ -1,13 +1,12 @@
 {
-  // IAR Build Tools for Arm (w/ ST device support)
-  //   Update the image for use with other variants
-  //   More information: https://github.com/iarsystems/containers/wiki/Arm-image-variants
-  "image": "ghcr.io/iarsystems/arm:9.70.4-st",
+  "image": "iarsystems/bxarm:9.70.4",
+  "mounts": [
+    "type=volume,src=LMS2,dst=/usr/local/etc/IARSystems"
+  ],
 
   // Set the Container's environment variables
   "containerEnv": {
     "HOME": "/home/ubuntu",
-    "IAR_LMS_BEARER_TOKEN": "${localEnv:IAR_LMS_BEARER_TOKEN}"
   },
 
   // Customizations installs the IAR Extensions for VS Code
@@ -28,7 +27,6 @@
   // The License Management System is updated
   //  for the Dev Container at build-time.
   "features": {
-    "./lmsc": {},
     "./jlink": {}
   },
 
